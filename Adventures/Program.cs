@@ -12,15 +12,30 @@ namespace Adventures
         {
             // Just getting my bearings here...
             drawValley(36);
+            Console.ReadLine();
+
             Shinobi player = new Shinobi();
+            Console.ReadLine();
+
             Console.WriteLine("Oh! Hello there! My name is Zigzo. What's your name?");
             player.setName(Console.ReadLine());
+
             Console.WriteLine("{0} is it? That's a weird name... You're not from around here, are you? How old are you anyway?", player.getName());
             player.setAge(Convert.ToInt32(Console.ReadLine()));
-            Console.WriteLine("You're {0}, huh?", player.getAge());
-            Console.ReadLine();
-           
 
+            Console.WriteLine("You're {0}, huh?", player.getAge());
+            Location Konoha = new Location("Konoha", 40, 40, 40);
+            player.setHeight(10);
+            Konoha.place(player, 0,0,0);
+            Konoha.place(player, 0, 0, 10);
+            //Konoha.place(player, 0, 0, 9);
+            Konoha.showTop();
+            Konoha.showRight();
+
+
+
+
+            Console.ReadLine();
         }
         static void drawValley(int n)
         {
@@ -39,36 +54,6 @@ namespace Adventures
                     Console.Write("*");
                 }
                 Console.WriteLine();
-            }
-        }
-        class Shinobi
-        {
-
-            // properties
-            private string name;
-            private int age;
-            public Shinobi()
-            {
-                Console.WriteLine("A new shinobi has entered the battlefield");
-            }
-            // getters
-            public string getName()
-            {
-                return name;
-            }
-            public int getAge()
-            {
-                return age;
-            }
-
-            // setters
-            public void setName(string name)
-            {
-                this.name = name;
-            }
-            public void setAge(int age)
-            {
-                this.age = age;
             }
         }
     }
