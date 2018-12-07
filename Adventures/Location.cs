@@ -89,7 +89,7 @@ namespace Adventures
             Console.WriteLine();
             Console.WriteLine("      Top View of: {0}", name);
 
-            Console.WriteLine("      ---------------------------------------------------------------X-Axis--------------------------------------------------------->");
+            Console.WriteLine("      ---------------------------------------------------------------X-Axis--------------------------------------------------->");
             Console.Write("      "); // buffer
             for (int x = 0; x < length; x++)
             {
@@ -161,8 +161,12 @@ namespace Adventures
         }
         public void showRight()
         {
+
             Console.WriteLine();
+            Console.WriteLine("      Right View of: {0}", name);
             string place = "*";
+            Console.WriteLine();
+
             for (int z = height - 1; z >= 0; z--) //each row
             {
                 for (int y = width - 1; y >= 0; y--) // each colomn
@@ -182,8 +186,58 @@ namespace Adventures
                     }
                     Console.Write("[{0}]", place);
                 }
+                
+                if (z <= 9 && z < width - 1 && (z != (width / 2) && z != (width / 2) + 1 && z != (width / 2) - 2 && z != (width / 2) - 1 && z != (width / 2) + 3))
+                {
+                    Console.Write(" {0}  |", z);
+                }
+                else if (z > 9 && z < width - 1 && (z != (width / 2) && z != (width / 2) + 1 && z != (width / 2) - 2 && z != (width / 2) - 1 && z != (width / 2) + 3))
+                {
+                    Console.Write(" {0} |", z);
+                }
+                else if (z > 9 && z < width - 1 && z == (width / 2) - 2)
+                {
+                    Console.Write(" {0} s  ", z);
+                }
+                else if (z > 9 && z < width - 1 && z == (width / 2) - 1)
+                {
+                    Console.Write(" {0} i  ", z);
+                }
+                else if (z > 9 && z < width - 1 && z == (width / 2) + 0)
+                {
+                    Console.Write(" {0} x  ", z);
+                }
+                else if (z > 9 && z < width - 1 && z == (width / 2) + 1)
+                {
+                    Console.Write(" {0} A  ", z);
+                }
+                else if (z > 9 && z < width - 1 && z == (width / 2) + 3)
+                {
+                    Console.Write(" {0} Z  ", z);
+                }
+                else if (z >= height - 1)
+                {
+                    Console.Write(" {0} ^  ", z);
+                }
                 Console.WriteLine();
             }
+
+
+            for (int y = width - 1; y >= 0; y--)
+            {
+                if (y <= 9)
+                {
+                    Console.Write(" {0} ", y);
+                }
+                else
+                {
+                    Console.Write("{0} ", y);
+                }
+            }
+
+
+            Console.WriteLine();
+            Console.WriteLine("<---------------------------------------------------------------Y-Axis-------------------------------------------------------");
 
         }
 
