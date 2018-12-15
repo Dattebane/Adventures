@@ -111,7 +111,7 @@ namespace Adventures
                 {
                     Console.Write(" |  {0} ", y);
                 }
-                else if(y > 9 && y < width - 1 && (y != (width / 2) && y != (width / 2) + 1 && y != (width / 2) - 2 && y != (width / 2) + 2 && y != (width / 2) + 3))
+                else if (y > 9 && y < width - 1 && (y != (width / 2) && y != (width / 2) + 1 && y != (width / 2) - 2 && y != (width / 2) + 2 && y != (width / 2) + 3))
                 {
                     Console.Write(" | {0} ", y);
                 }
@@ -140,15 +140,16 @@ namespace Adventures
                     Console.Write(" v {0} ", y);
                 }
                 for (int x = 0; x < length; x++) // each colomn
-                {   
+                {
                     //Console.Write("The length is " + Convert.ToString(length));
                     for (int z = height - 1; z >= 0; z--)
                     {
-                        if (space[x,y,z] != null)
+                        if (space[x, y, z] != null)
                         {
                             place = " ";
                             break;
-                        } else
+                        }
+                        else
                         {
                             place = "*";
                         }
@@ -186,7 +187,7 @@ namespace Adventures
                     }
                     Console.Write("[{0}]", place);
                 }
-                
+
                 if (z <= 9 && z < width - 1 && (z != (width / 2) && z != (width / 2) + 1 && z != (width / 2) - 2 && z != (width / 2) - 1 && z != (width / 2) + 3))
                 {
                     Console.Write(" {0}  |", z);
